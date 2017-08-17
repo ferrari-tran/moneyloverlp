@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.css"],"names":[],"mappings":"AAAA,KACE,MAAA,KACA,UAAA,KACA,YAAA,IACA,WAAA,MACA,uBAAA","file":"main.min.css","sourcesContent":["body {\n  color: white;\n  font-size: 24px;\n  line-height: 1.5;\n  background: coral;\n  -webkit-font-smoothing: antialiased; }\n"]}
