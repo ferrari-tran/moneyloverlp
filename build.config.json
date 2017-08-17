@@ -1,0 +1,12 @@
+{
+  "build_dir": "./dist",
+  "vendor_files": {
+    "js": [
+      "node_modules/bootstrap/dist/bootstrap.min.js"
+    ],
+    "css": [
+    ],
+    "assets": [
+    ]
+  }
+}
