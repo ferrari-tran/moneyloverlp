@@ -32,9 +32,11 @@ gulp.task('haml', function() {
 
 // Copy file vendor to dist
 // Pending
-gulp.task('vendor', function() {
+gulp.task('copy', function() {
   gulp.src(config.vendor_files.js)
     .pipe(gulp.dest(config.build_dir + '/vendor/js'));
+  gulp.src(config.vendor_files.css)
+    .pipe(gulp.dest(config.build_dir + '/vendor/css'));
 });
 
 // CSS lint
@@ -123,4 +125,4 @@ gulp.task('watch', function () {
   gulp.watch([SOURCE_DIR + 'assets/js/**/*.js'], ['compile-scripts']);
 });
 
-gulp.task('default', ['haml', 'vendor', 'compile-styles', 'compile-scripts', 'optimize-images', 'watch']);
+gulp.task('default', ['haml', 'copy', 'compile-styles', 'compile-scripts', 'optimize-images', 'watch']);
