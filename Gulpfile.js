@@ -7,6 +7,8 @@ var gulp        = require('gulp'),
   plumber       = require('gulp-plumber'),
   cssLint       = require('gulp-csslint'),
   haml          = require('gulp-haml'),
+  ejs           = require('gulp-ejs'),
+  gutil         = require('gulp-util'),
   sassLint      = require('gulp-sass-lint'),
   uglify        = require('gulp-uglify'),
   esLint        = require('gulp-eslint'),
@@ -26,6 +28,13 @@ var BUILD_DIR   = './dist/',
 gulp.task('haml', function() {
   gulp.src(SOURCE_DIR + '*.haml')
     .pipe(haml())
+    .pipe(gulp.dest(BUILD_DIR))
+    .pipe(reload({stream: true}));
+});
+
+gulp.task('ejs', function() {
+  gulp.src(SOURCE_DIR + '*.ejs')
+    .pipe(ejs({},{}, {ext: '.html'}).on('error', gutil.log))
     .pipe(gulp.dest(BUILD_DIR))
     .pipe(reload({stream: true}));
 });
@@ -121,8 +130,9 @@ gulp.task('watch', function () {
   });
 
   gulp.watch([SOURCE_DIR + '*.haml'], ['haml']);
+  gulp.watch([SOURCE_DIR + '*.ejs'], ['ejs']);
   gulp.watch([SOURCE_DIR + 'assets/scss/**/*.s+(a|c)ss', SOURCE_DIR + 'assets/css/**/*.css'], ['compile-styles']);
   gulp.watch([SOURCE_DIR + 'assets/js/**/*.js'], ['compile-scripts']);
 });
 
-gulp.task('default', ['haml', 'copy', 'compile-styles', 'compile-scripts', 'optimize-images', 'watch']);
+gulp.task('default', ['haml', 'ejs', 'copy', 'compile-styles', 'compile-scripts', 'optimize-images', 'watch']);
