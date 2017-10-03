@@ -6,7 +6,6 @@ var gulp        = require('gulp'),
   cleanCSS      = require('gulp-clean-css'),
   plumber       = require('gulp-plumber'),
   cssLint       = require('gulp-csslint'),
-  haml          = require('gulp-haml'),
   ejs           = require('gulp-ejs'),
   gutil         = require('gulp-util'),
   sassLint      = require('gulp-sass-lint'),
@@ -23,14 +22,6 @@ var gulp        = require('gulp'),
 
 var BUILD_DIR   = './dist/',
     SOURCE_DIR  = './source/';
-
-// Default compile .haml to .html
-gulp.task('haml', function() {
-  gulp.src(SOURCE_DIR + '*.haml')
-    .pipe(haml())
-    .pipe(gulp.dest(BUILD_DIR))
-    .pipe(reload({stream: true}));
-});
 
 gulp.task('ejs', function() {
   gulp.src(SOURCE_DIR + '*.ejs')
@@ -58,7 +49,9 @@ gulp.task('css-lint', function() {
 // Sass lint
 gulp.task('sass-lint', function() {
   gulp.src(SOURCE_DIR + 'assets/scss/*.s+(a|c)ss')
-    .pipe(sassLint())
+    .pipe(sassLint({
+      "sasslintConfig": "./.sass-lint.yml"
+    }))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
 });
@@ -129,10 +122,10 @@ gulp.task('watch', function () {
     }
   });
 
-  gulp.watch([SOURCE_DIR + '*.haml'], ['haml']);
-  gulp.watch([SOURCE_DIR + '*.ejs'], ['ejs']);
+  gulp.watch([SOURCE_DIR + '**/*.ejs'], ['ejs']);
+  gulp.watch([SOURCE_DIR + 'assets/images/*'], ['optimize-images']);
   gulp.watch([SOURCE_DIR + 'assets/scss/**/*.s+(a|c)ss', SOURCE_DIR + 'assets/css/**/*.css'], ['compile-styles']);
   gulp.watch([SOURCE_DIR + 'assets/js/**/*.js'], ['compile-scripts']);
 });
 
-gulp.task('default', ['haml', 'ejs', 'copy', 'compile-styles', 'compile-scripts', 'optimize-images', 'watch']);
+gulp.task('default', ['ejs', 'copy', 'compile-styles', 'compile-scripts', 'optimize-images', 'watch']);

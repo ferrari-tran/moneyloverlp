@@ -1,0 +1,85 @@
+/* Typography */
+.heading {
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.ss-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $text-color-white;
+  font-size: 2.25rem;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 60px;
+
+  @include
+    breakpoint(767, max) {
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+    }
+
+  &.title-dark {
+    color: $black;
+  }
+
+  &::before {
+    height: 3px;
+    content: '';
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: $primary-color;
+    width: 200px;
+  }
+
+  &.title-center {
+    text-align: center;
+    &::before {
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+.text-quote {
+  font-size: 1rem;
+  position: relative;
+  padding-left: 60px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    background: $primary-color;
+    width: 50px;
+    height: 1px;
+  }
+}
+
+/* Section */
+.ss-padding {
+  padding: 100px 0;
+  @include breakpoint(767, max) {
+    padding: 60px 0;
+  }
+}
+
+/* Button */
+.btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.btn-outline {
+  border: solid 1px #ffffff;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  &:hover {
+    background: #fff;
+    color: $primary-color;
+  }
+}

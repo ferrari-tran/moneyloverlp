@@ -1,0 +1,51 @@
+.ss-process {
+	background: #ffffff;
+	color: $black;
+	overflow: hidden;
+}
+
+.process-carousel {
+	text-align: center;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100vw;
+		top: 82px;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 1px;
+		background: #bababa;
+	}
+	.process-icon {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 60px;
+		margin-bottom: 20px;
+		position: relative;
+		&::before {
+			position: absolute;
+			content: '';
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			border: solid 3px $black;
+			background: $primary-color;
+			bottom: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		img {
+			max-width: 60px;
+			width: auto;
+		}
+	}
+	.process-info {
+		margin-top: 40px;
+		h6 {
+			font-weight: bold;
+		}
+	} 
+}

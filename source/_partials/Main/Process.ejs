@@ -1,0 +1,37 @@
+<% var processes = [
+	{
+		src: "images/process-1.min.png",
+		step: "Để lại thông tin"
+	},
+	{
+		src: "images/process-2.min.png",
+		step: "Tư vấn"
+	},
+	{
+		src: "images/process-3.min.png",
+		step: "Tập thử"
+	},
+	{
+		src: "images/process-4.min.png",
+		step: "Trở thành member"
+	}
+] %>
+
+<section class="ss-process ss-padding" id="ss-process">
+	<div class="container">
+		<h2 class="ss-title title-center title-dark">Lộ trình tập luyện</h2>
+
+		<section class="process-carousel owl-carousel owl-theme mt-5">
+			<% processes.forEach(function(process) { %>
+				<div class="item">
+					<div class="process-icon">
+						<img src="<%= process.src %>" alt="<%= process.step %>">
+					</div>
+					<div class="process-info">
+						<h6><%= process.step %></h6>
+					</div>
+				</div>
+			<% }); %>
+		</section>
+	</div>
+</section>

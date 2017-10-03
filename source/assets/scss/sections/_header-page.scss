@@ -1,0 +1,43 @@
+.page-header {
+  position: relative;
+  z-index: 0;
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .carousel {
+    background-image: url('../images/slide-1-bg.min.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+.carousel-detail {
+	.carousel-content-block {
+		display: flex;
+		align-items: center;
+    height: 100vh;
+    width: 100%;
+    max-height: 764px;
+    @include breakpoint(768, min) {
+      .carousel-caption-block {
+        max-width: 50%;
+      }
+    }
+    @include breakpoint(992, min) {
+      position: relative;
+      .carousel-caption-block {
+        max-width: 65%;
+      }
+      .carousel-img-model {
+        position: absolute;
+        bottom: 0;
+        right: -30px;
+        height: 90%;
+      }
+    }
+	}
+}

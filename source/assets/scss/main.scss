@@ -1,7 +1,16 @@
-body {
-  color: white;
-  font-size: 24px;
-  line-height: 1.5;
-  background: coral;
-  -webkit-font-smoothing: antialiased;
-}
+@import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900&subset=vietnamese');
+@import 'mixin';
+@import 'variables';
+@import 'common';
+@import 'utilities';
+
+@import 'sections/header-page';
+@import 'sections/ss-benefit';
+@import 'sections/ss-staff';
+@import 'sections/ss-facility';
+@import 'sections/ss-coach';
+@import 'sections/ss-testimonial';
+@import 'sections/ss-process';
+@import 'sections/ss-register';
+@import 'sections/ss-slogan';
+@import 'sections/footer-page';

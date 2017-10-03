@@ -1,0 +1,4 @@
+// Media query
+@mixin breakpoint($size, $type) {
+  @media only screen and (#{$type}-width: $size + px) { @content; }
+}

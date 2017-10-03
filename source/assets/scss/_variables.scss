@@ -1,0 +1,9 @@
+$primary-color:	 	#71bf44; // green
+$secondary-color: 	#20232a; // blue-dark for background
+$black: 			#222;// black
+$text-color-white:	#fff;
+$font-family: 		'Source Sans Pro', sans-serif;
+
+$highlight: 		$primary-color;
+
+.text-highlight { color: $highlight; }

@@ -1,0 +1,42 @@
+.page-footer {
+	display: flex;
+	align-self: stretch;
+	.footer-logo {
+		width: 50px;
+		@include breakpoint(576, min) {
+			width: 100px;
+		}
+		@include breakpoint(992, min) {
+			width: 168px;
+		}
+	}
+	background: $secondary-color;
+	background-image: linear-gradient(to right, #ffffff 0%, #ffffff 50%, $secondary-color 50%, $secondary-color 100%);
+	.footer-col-left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+	.footer-col-right {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		font-size: 0.75rem;
+
+		@include breakpoint(992, min) {
+			padding-left: 100px;
+			padding-right: 100px;
+			font-size: 1rem;
+		}
+
+		address {
+			margin-bottom: 0;
+		}
+	}
+	.container .row {
+		> div:nth-child(2) {
+			background: $secondary-color;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "files": {
+    "include": "source/assets/**/*.s+(a|c)ss",
+    "ignore": "*.scss"
+  },
+  "rules": {
+
+  }
+}

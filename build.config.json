@@ -2,12 +2,15 @@
   "build_dir": "./dist",
   "vendor_files": {
     "js": [
-      "node_modules/bootstrap/dist/js/bootstrap.min.js"
+      "node_modules/bootstrap/dist/js/bootstrap.min.js",
+      "node_modules/popper.js/dist/umd/popper.min.js",
+      "node_modules/jquery/dist/jquery.min.js",
+      "node_modules/owl-carousel-2/owl.carousel.min.js"
     ],
     "css": [
-      "node_modules/bootstrap/dist/css/bootstrap.min.css"
-    ],
-    "assets": [
+      "node_modules/bootstrap/dist/css/bootstrap.min.css",
+      "node_modules/owl-carousel-2/assets/owl.carousel.min.css",
+      "node_modules/owl-carousel-2/assets/owl.theme.default.min.css"
     ]
   }
 }

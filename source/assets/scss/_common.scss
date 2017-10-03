@@ -1,0 +1,12 @@
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: $black;
+  color: $text-color-white;
+  font-family: $font-family;
+  line-height: 1.5;
+}
+
+.wrapper {
+	overflow: hidden;
+}
