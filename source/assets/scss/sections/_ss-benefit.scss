@@ -16,30 +16,6 @@
   .benefit-carousel-i {
     margin: 0 auto;
     .benefit-carousel {
-      .owl-item {
-        mix-blend-mode: overlay;
-        background-image: radial-gradient(circle at 0 0, #000000, #ffffff);
-        &:nth-child(2n+1) {
-          background: #333333;
-        }
-        &:nth-child(2n) {
-          background: #252525;
-        }
-      }
-      .item {
-        overflow: hidden;
-        @include breakpoint(767, max) {
-          padding: 15px;
-        }
-        &:hover {
-          .benefit-item-model {
-            top: 15px;
-          }
-          .benefit-item-cta {
-            right: -15px;
-          }
-        }
-      }
       .benefit-item {
         position: relative;
         z-index: 0;
@@ -53,57 +29,47 @@
           left: 0;
           transition: all 0.2s ease-in-out;
         }
+        .benefit-item-overlay {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background: $primary-color;
+          top: 20px;
+          left: 0;
+          opacity: 0;
+          // opacity: 1;
+          // top: 0;
+          transition: all 0.3s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &:hover {
+          .benefit-item-overlay {
+            opacity: 1;
+            top: 0;
+          }
+        }
       }
       .benefit-item-title {
-        font-weight: 700;
+        font-weight: 300;
         font-size: 2.5rem;
         text-align: center;
         line-height: 1;
         text-transform: uppercase;
-        margin: 20px 0;
+        color: $black;
       }
       .benefit-item-model {
         background-repeat: no-repeat;
         background-position: center center;
         background-size: auto;
       }
-      .benefit-item-cta {
+      .benefit-item-cta > a {
         position: absolute;
-        bottom: 0px;
-        right: -220px;
-        transition: all 0.2s ease-in-out;
-        @include breakpoint(767, max) {
-          bottom: -15px;
-          right: -220px;
-        }
-        > a {
-          display: flex;
-          background-image: url('../images/arrow-right.min.svg');
-          background-repeat: no-repeat;
-          background-size: 12px auto;
-          background-position: right 43px center;
-          background-color: $primary-color;
-          color: $black;
-          padding: 12px 60px 12px 30px;
-          position: relative;
-          text-transform: uppercase;
-          font-size: 1rem;
-          font-weight: 600;
-          z-index: 1;
-          text-decoration: none;
-          line-height: 1;
-          &::before {
-            content: '';
-            left: -37px;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 40px 37px;
-            border-color: transparent transparent $primary-color transparent;
-            position: absolute;
-          }
-        }
+        width: 70px;
+        height: 70px;
+        display: flex;
       }
     }
   }

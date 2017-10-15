@@ -114,6 +114,7 @@
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
+
   &.left {
     left: -80px; 
   }
@@ -138,6 +139,18 @@
     background: rgba(0,0,0,0.3);
     .icon {
       color: $primary-color;
+    }
+  }
+}
+
+*:not(.coach-modal) .nav-carousel {
+  @include breakpoint(575, max) {
+    z-index: 100;
+    &.left {
+      left: 30px;
+    }
+    &.right {
+      right: 30px;
     }
   }
 }

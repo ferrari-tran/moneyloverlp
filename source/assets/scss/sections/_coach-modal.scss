@@ -1,0 +1,135 @@
+.modal.fade.show {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal {
+	.modal-content {
+		border: none;
+		box-shadow: none;
+	}
+	
+	.close {
+		top: 30px;
+	    right: 30px;
+	    position: absolute;
+	    color: white;
+	    font-size: 30px;
+	}
+}
+
+.modal-backdrop.show {
+	opacity: 0.8;
+}
+
+.modal-fluid {
+	max-width: 500px;
+	width: 100%;
+	@include breakpoint(768, min) {
+		max-width: 600px;
+	}
+
+	@include breakpoint(992, min) {
+		max-width: 980px;
+	}
+	@include breakpoint(1200, min) {
+		max-width: 1190px;
+	}
+	.modal-content {
+		background: transparent;
+		padding: 0;
+	}
+}
+
+.coach-modal > div .coach-modal-item {
+	color: $black;
+	position: relative;
+	z-index: 0;
+	padding: 24px;
+	@include breakpoint(1200, min) {
+		height: 500px;
+		padding: 0;
+	}
+	.coach-name {
+		font-size: 30px;
+		font-weight: bold;
+		margin-bottom: 0;
+		@include breakpoint(1200, min) {
+			margin-top: 86px;
+		}
+	}
+	.coach-content {
+		@include breakpoint(1200, min) {
+			padding-top: 1px;
+			padding-bottom: 30px;
+			max-width: 500px;
+			margin-left: 80px;
+		}
+	}
+	.coach-job {
+		@extend .text-highlight;
+		font-style: italic;
+	}
+	.coach-thumb {
+		position: absolute;
+		top: 0px;
+		right: 30px;
+		> div {
+			@include breakpoint(1200, min) {
+				height: 480px;
+				width: 350px;
+			}
+			position: relative;
+			z-index: 0;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: gray;
+				transform: skewX(15deg);
+			}
+			img {
+				position: absolute;
+				height: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.coach-modal > div {
+	.slick-slide {
+		@include breakpoint(1200, min) {
+			padding: 0 60px;
+		}
+	}
+	.coach-block {
+		position: relative;
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: white;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			@include breakpoint(1200, min) {
+				transform: skewX(15deg);
+				top: 46px;
+				height: calc(100% - 92px);
+			}
+		}
+	}
+
+	@include breakpoint(1199, max) {
+		.coach-thumb {
+			display: none;
+		}
+	}
+}

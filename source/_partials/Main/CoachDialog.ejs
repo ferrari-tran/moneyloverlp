@@ -1,0 +1,38 @@
+<!-- Modal -->
+<div class="modal fade" id="coachModal" tabindex="-1" role="dialog" aria-labelledby="coachModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-dialog modal-fluid" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <article class="coach-modal">
+          <div>
+              <% coachs.forEach(function(coach) { %>
+                <div>
+                  <div class="coach-block">
+                    <div class="coach-modal-item">
+                      <div class="coach-thumb">
+                        <div>
+                          <img src="images/<%= coach.imgTransparent %>" alt="<%= coach.firstname + ' ' + coach.lastname %>">
+                        </div>
+                      </div>
+                      <div class="coach-content">
+                        <h4 class="coach-name"><%= coach.firstname + ' ' + coach.lastname %></h4>
+                        <p class="coach-job"><%= coach.job %></p>
+                        <p>
+                          <%- coach.intro %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }); %>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</div>

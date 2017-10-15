@@ -90,15 +90,25 @@
 	.container {
 		position: relative;
 		height: 880px;
+		@include breakpoint(767, max) {
+			height: 780px;
+		}
 		.coach-view-img {
 			width: 550px;
-			// height: 100%;
 			background-repeat: no-repeat;
 			background-position: top center;
 			background-size: 100% auto;
 			position: absolute;
 			top: 0;
 			left: -200px;
+
+			@include breakpoint(1199, max) {
+				width: 400px;
+			}
+			@include breakpoint(767, max) {
+				width: 300px;
+				left: -130px;
+			}
 		}
 	}
 	
@@ -117,9 +127,30 @@
 			.text-big {
 				font-size: 130px;
 			}
+			@include breakpoint(1199, max) {
+				font-size: 34px;
+				.text-big {
+					font-size: 80px;
+				}
+			}
+			@include breakpoint(767, max) {
+				font-size: 18px;
+				.text-big {
+					font-style: 14px;
+				}
+			}
 		}
 		p {
 			margin-bottom: 5px;
+		}
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.coach-item {
+		.coach-item-detail {
+			flex-direction: column;
+			justify-content: flex-start;
 		}
 	}
 }

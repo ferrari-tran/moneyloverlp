@@ -23,7 +23,7 @@
     width: 100%;
     max-height: 764px;
     @include breakpoint(992, min) {
-      .carousel-caption-block {
+      .carousel-caption-block:not(.caption-full) {
         max-width: 50%;
       }
     }
@@ -42,6 +42,13 @@
     img {
       @include breakpoint(991, max) {
         display: none;
+      }
+    }
+    &.content-full {
+      @include breakpoint(992, min) {
+        .carousel-caption-block {
+          max-width: 100%;
+        }
       }
     }
 	}
