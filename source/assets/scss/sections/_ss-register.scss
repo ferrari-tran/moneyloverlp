@@ -21,6 +21,14 @@
 			bottom: -325px;
 			right: calc(50% - 1000px);
 		}
+		@include breakpoint(1199, max) {
+			width: 600px;
+			bottom: -290px;
+			right: -60px;
+		}
+		@include breakpoint(991, max) {
+			display: none;
+		}
 	}
 	.container:nth-child(1) {
 		position: relative;
@@ -29,6 +37,9 @@
 }
 
 .form-register {
+	@include breakpoint(767, max) {
+		margin-top: 50px;
+	}
 	.form-group {
 		position: relative;
 		z-index: 0;
@@ -84,8 +95,10 @@
 
 .slogan-area {
 	margin-top: 50px;
+	display: none;
 	@include breakpoint(768, min) {
 		margin-top: 70px;
+		display: block;
 	}
 	@include breakpoint(992, min) {
 		margin-top: 100px;
@@ -119,6 +132,16 @@
 	@include breakpoint(1200, min) {
 		h1 {
 			font-size: 7.6rem;
+		}
+	}
+
+	@include breakpoint(1199, max) {
+		margin-bottom: -242px;
+	}
+	@include breakpoint(991, max) {
+		margin-bottom: -220px;
+		h1 {
+			font-size: 5rem;
 		}
 	}
 }

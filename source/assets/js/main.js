@@ -213,3 +213,78 @@ $('.btn-scroll')
       }
     }
   });
+
+  // https://script.google.com/macros/s/AKfycbx0khILC57Nybfjhgz0_ichxjG2uwtWkrWjtQpZ0fcdfeOOTw8/exec
+/**
+ * Submit button
+ */
+$(document).ready(function() {
+  var alertBox = $('#alert-box');
+  $(alertBox).hide();
+  
+  var validator = new FormValidator('form-register', [{
+    name: 'name',
+    display: 'Vui lòng điền đầy đủ họ tên!',
+    rules: 'required'
+  }, {
+    name: 'mobile',
+    rules: 'required|min_length[8]',
+    display: 'Số điện thoại chưa đúng định dạng!'
+  }, {
+    name: 'email',
+    rules: 'valid_email',
+    display: 'Bạn chưa điền email hoặc Email chưa đúng định dạng!'
+  }], function(error, event) {
+    if (error.length > 0) {
+      /**
+       * Show message alert in box
+       */
+      var msg = error[0].display;
+      $(alertBox).show().addClass('alert-danger').html(msg);
+    } else {
+      /**
+       * Check event of button submit
+       */
+      if (event && event.preventDefault()) {
+        event.preventDefault();
+      } else if (event) {
+        event.returnValue = false;
+      }
+      /**
+       * Send form data
+       */
+      var form = $(event.target).closest('form');
+      var inputs = $(form).find('.form-control');
+      var data = {};
+
+      $(inputs).each(function(index, input) {
+        var name = $(input).attr('name');
+        var value = $(input).val();
+        data[name] = value;
+      });
+
+      setTimeout(function() {
+        var api = '//script.google.com/macros/s/AKfycbx0khILC57Nybfjhgz0_ichxjG2uwtWkrWjtQpZ0fcdfeOOTw8/exec';
+		    var jqxhr = $.ajax({
+		      url: api,
+		      method: "POST",
+		      dataType: "json",
+		      data: {
+		        name: data.name,
+	          mobile: data.mobile,
+	          email: data.email
+		      },
+		      success: function(data) {
+		        // $(alertBox).removeClass('alert-danger').html('Đăng ký thành công!').addClass('alert-success').show();
+		        $(alertBox).removeClass('alert-danger');
+		        alert('Đăng ký thành công!');
+		      },
+		      error: function(data) {
+		        alert('Lỗi đăng ký!');
+		      }
+		    });
+
+      }, 300);
+    }
+  });
+});

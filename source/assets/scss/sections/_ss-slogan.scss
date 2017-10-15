@@ -13,4 +13,16 @@
 		top: 0;
 		right: 0;
 	}
+	@include breakpoint(991, max) {
+		height: 250px;
+		&::before {
+			width: 20%;
+		}
+	}
+	@include breakpoint(767, max) {
+		height: 5px;
+		&::before {
+			display: none;
+		}
+	}
 }
