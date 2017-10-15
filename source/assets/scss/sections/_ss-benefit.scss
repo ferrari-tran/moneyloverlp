@@ -27,8 +27,6 @@
         }
       }
       .item {
-        height: 480px;
-        padding: 40px 15px;
         overflow: hidden;
         @include breakpoint(767, max) {
           padding: 15px;
@@ -62,6 +60,7 @@
         text-align: center;
         line-height: 1;
         text-transform: uppercase;
+        margin: 20px 0;
       }
       .benefit-item-model {
         background-repeat: no-repeat;
@@ -70,7 +69,7 @@
       }
       .benefit-item-cta {
         position: absolute;
-        bottom: -40px;
+        bottom: 0px;
         right: -220px;
         transition: all 0.2s ease-in-out;
         @include breakpoint(767, max) {

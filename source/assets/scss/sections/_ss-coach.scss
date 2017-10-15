@@ -5,3 +5,121 @@
 	background-position: top right;
 	background-repeat: no-repeat;
 }
+
+.slick-slide {
+  margin: 0 15px;
+  box-sizing: border-box;
+}
+.slick-list {
+  margin: 0 -15px;
+}
+
+.coach-carousel-control-w {
+	margin-top: -320px;
+}
+.coach-carousel-control {
+	.coach-item {
+		border: solid 2px #fff;
+		position: relative;
+		z-index: 0;
+		cursor: pointer;
+		outline: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(15deg, #20232a, rgba(33, 33, 27, 0.12) 88%);
+			background-blend-mode: multiply;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.coach-item-detail {
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			bottom: -50%;
+			left: 0;
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			padding: 33px;
+			transition: all 0.3s ease-in-out;
+			.coach-info {
+				h6 {
+					font-size: 16px;
+					font-weight: bold;
+					text-transform: uppercase;
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+				span {
+					font-style: italic;
+					font-size: 12px;
+				}
+				.btn {
+					height: 30px;
+				}
+			}
+		}
+		.coach-item-img {
+			// background-repeat: no-repeat;
+			// background-size: 100% auto;
+			// background-position: center;
+			width: 100%;
+		}
+
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+			.coach-item-detail {
+				bottom: 0;
+			}
+		}
+	}
+}
+
+
+.coach-view-item {
+	.container {
+		position: relative;
+		height: 880px;
+		.coach-view-img {
+			width: 550px;
+			// height: 100%;
+			background-repeat: no-repeat;
+			background-position: top center;
+			background-size: 100% auto;
+			position: absolute;
+			top: 0;
+			left: -200px;
+		}
+	}
+	
+	.coach-view-detail {
+		width: 66.6666666667%;
+		float: right;
+		h2 {
+			margin-bottom: 40px;
+		}
+		.coach-name {
+			text-transform: uppercase;
+			font-weight: 900;
+			font-size: 48px;
+			line-height: 1;
+			margin-bottom: 20px;
+			.text-big {
+				font-size: 130px;
+			}
+		}
+		p {
+			margin-bottom: 5px;
+		}
+	}
+}

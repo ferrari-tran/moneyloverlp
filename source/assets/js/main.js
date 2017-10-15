@@ -24,7 +24,7 @@ $.fn.andSelf = function() {
  * Benefit carousel
  */
 $(document).ready(function() {
-  $('.benefit-item-model').imgBg();
+  // $('.benefit-item-model').imgBg();
   
 	var config = {
 		loop: true,
@@ -107,5 +107,28 @@ $(document).ready(function() {
 				console.log(e);
 			}
 		});
+});
 
+/**
+ * Coach carousel
+ */
+$(document).ready(function() {
+	var sliderNav = '.coach-carousel-control > div';
+	$(sliderNav).slick({
+	  slidesToShow: 3,
+	  slidesToScroll: 1,
+	  dots: false,
+	  centerPadding: 30,
+	  centerMode: true,
+	  mouseDrage: false,
+	  prevArrow: '<span class="nav-carousel left"><i class="icon icon-caret-left"></i></span>',
+	  nextArrow: '<span class="nav-carousel right"><i class="icon icon-caret-right"></i></span>'
+	});
+});
+
+$(document).ready(function() {
+	var imgBg = $('.img-bg');
+	if (imgBg.length > 0) {
+		$('.img-bg').imgBg();
+	}
 });

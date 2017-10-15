@@ -1,23 +1,39 @@
 <% var benefits = [
   {
     "title": "Dancing",
-    "srcModel": "images/subject-model-1.min.png"
+    "srcBackground": "images/11.min.jpg"
   },
   {
     "title": "Cycling",
-    "srcModel": "images/subject-model-1.min.png"
+    "srcBackground": "images/22.min.jpg"
   },
   {
     "title": "Functional",
-    "srcModel": "images/subject-model-1.min.png"
+    "srcBackground": "images/33.min.jpg"
   },
   {
     "title": "Pakour",
-    "srcModel": "images/subject-model-1.min.png"
+    "srcBackground": "images/44.min.jpg"
   },
   {
     "title": "Fitkid",
-    "srcModel": "images/subject-model-1.min.png"
+    "srcBackground": "images/55.min.jpg"
+  },
+  {
+    "title": "Fitkid",
+    "srcBackground": "images/66.min.jpg"
+  },
+  {
+    "title": "Fitkid",
+    "srcBackground": "images/77.min.jpg"
+  },
+  {
+    "title": "Fitkid",
+    "srcBackground": "images/88.min.jpg"
+  },
+  {
+    "title": "Fitkid",
+    "srcBackground": "images/99.min.jpg"
   }
 ]; %>
 
@@ -27,15 +43,16 @@
 	</div>
   <div class="benefit-carousel-w">
     <div class="benefit-carousel-i">
-      <p><%= benefits %></p>
       <section class="benefit-carousel owl-carousel owl-theme">
 
         <% benefits.forEach(function(benefit) { %>
           <div class="item">
             <article class="benefit-item">
-              <h4 class="benefit-item-title"><%= benefit.title %></h4>
-              <div class="benefit-item-model" data-src="<%= benefit.srcModel %>"></div>
-              <div class="benefit-item-cta"><a href="#">Xem thêm</a></div>
+              <div class="benefit-item-overlay">
+                <h4 class="benefit-item-title"><%= benefit.title %></h4>
+                <div class="benefit-item-cta"><a href="#"></a></div>
+              </div>
+              <img src="<%= benefit.srcBackground %>" alt="<%= benefit.title %>">
             </article>
           </div>
         <% }); %>
