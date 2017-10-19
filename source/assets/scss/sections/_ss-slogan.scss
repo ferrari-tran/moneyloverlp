@@ -17,6 +17,7 @@
 		height: 250px;
 		&::before {
 			width: 20%;
+			display: none;
 		}
 	}
 	@include breakpoint(767, max) {
