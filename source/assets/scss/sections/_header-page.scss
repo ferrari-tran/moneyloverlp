@@ -55,14 +55,36 @@
     }
 	}
 }
-.page-header .carousel-item:not(:first-child) {
-  .carousel-content-block {
-    @include breakpoint(992, min) {
-      margin-left: 5%;
-    }
-    @include breakpoint(1200, min) {
-      margin-left: 12%;
-    }
 
+.carousel-control-prev {
+  justify-content: flex-start;
+}
+.carousel-control-next {
+  justify-content: flex-end;
+}
+
+.carousel-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.5);
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+
+  > .icon {
+    margin-top: 2px;
+  }
+  @include breakpoint(992, min) {
+    width: 50px;
+    height: 50px;
+    > .icon {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+  }
+  &:hover {
+    background: $primary-color;
+    color: $black;
   }
 }
