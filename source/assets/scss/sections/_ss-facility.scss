@@ -44,7 +44,7 @@
 		position: relative;
 		z-index: 0;
 		width: 100%;
-		height: 500px;
+		height: 420px;
 		transform: scale(0.55) translateY(-100px);
 		> li {
 			position: absolute;
@@ -75,7 +75,7 @@
 
 			&:nth-child(4) {
 				z-index: 1;
-				bottom: 170px;
+				bottom: 0px;
 				left: -200px;
 				width: 65%;
 			}
@@ -109,7 +109,7 @@
 			}
 
 			&:nth-child(4) {
-				bottom: 90px;
+				bottom: -90px;
 				left: -230px;
 			}
 		}

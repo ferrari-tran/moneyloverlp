@@ -26,7 +26,8 @@
 }
 
 .modal-backdrop.show {
-	opacity: 0.95;
+	background-color: $black;
+	opacity: 1;
 }
 
 .modal-fluid {
