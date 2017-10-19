@@ -8,11 +8,16 @@
     width: 100%;
     z-index: 1;
   }
-  .carousel {
-    background-image: url('../images/slide-1-bg.min.jpg');
+  .carousel-item {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    &:nth-child(1) {
+      background-image: url('../images/slide-1-bg.min.jpg');
+    }
+    &:nth-child(2), &:nth-child(3) {
+      background-image: url('../images/bg-room.min.png');
+    }
   }
 }
 .carousel-detail {
@@ -24,14 +29,11 @@
     max-height: 764px;
     @include breakpoint(992, min) {
       .carousel-caption-block:not(.caption-full) {
-        max-width: 50%;
+        max-width: 60%;
       }
     }
     @include breakpoint(992, min) {
       position: relative;
-      .carousel-caption-block {
-        max-width: 65%;
-      }
       .carousel-img-model {
         position: absolute;
         bottom: 0;
@@ -52,4 +54,15 @@
       }
     }
 	}
+}
+.page-header .carousel-item:not(:first-child) {
+  .carousel-content-block {
+    @include breakpoint(992, min) {
+      margin-left: 5%;
+    }
+    @include breakpoint(1200, min) {
+      margin-left: 12%;
+    }
+
+  }
 }

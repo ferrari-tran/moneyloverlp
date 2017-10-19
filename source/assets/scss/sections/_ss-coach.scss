@@ -44,12 +44,17 @@
 			z-index: 2;
 			width: 100%;
 			bottom: -50%;
+			// bottom: 0;
 			left: 0;
 			display: flex;
 			align-items: flex-end;
 			justify-content: space-between;
 			padding: 33px;
 			transition: all 0.3s ease-in-out;
+			@include breakpoint(767, max) {
+				padding: 15px;
+				align-items: flex-start;
+			}
 			.coach-info {
 				h6 {
 					font-size: 16px;
@@ -65,12 +70,12 @@
 				.btn {
 					height: 30px;
 				}
+				@include breakpoint(767, max) {
+					margin-bottom: 10px;
+				}
 			}
 		}
 		.coach-item-img {
-			// background-repeat: no-repeat;
-			// background-size: 100% auto;
-			// background-position: center;
 			width: 100%;
 		}
 
@@ -104,10 +109,18 @@
 
 			@include breakpoint(1199, max) {
 				width: 400px;
+				left: -100px;
+			}
+			@include breakpoint(991, max) {
+				width: 350px;
+				left: -130px;
 			}
 			@include breakpoint(767, max) {
 				width: 300px;
 				left: -130px;
+			}
+			@include breakpoint(479, max) {
+				left: -175px;
 			}
 		}
 	}
@@ -134,9 +147,9 @@
 				}
 			}
 			@include breakpoint(767, max) {
-				font-size: 18px;
+				font-size: 24px;
 				.text-big {
-					font-style: 14px;
+					font-size: 48px;
 				}
 			}
 		}

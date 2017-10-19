@@ -51,7 +51,7 @@
 						<img class="coach-view-img" src="images/coach-1.min.png" alt="Kamil Nguyen Van">
 						<div class="coach-view-detail">
 							<h2 class="ss-title">Huấn luyện viên</h2>
-							<div class="coach-name"><span class="text-big">Kamil</span> Nguyen Van</div>
+							<div class="coach-name"><span class="text-big">Kamil</span></div>
 							<p class="font-weight-bold text-highlight">Master Trainer</p>
 							<p>- 8 năm làm huấn luyện viên cá nhân</p>
 							<p>- Đào tạo các Huấn luyện viên Việt Nam</p>
@@ -70,7 +70,7 @@
 		<div class="coach-carousel-control">
 			<div>
 				<% coachs.forEach(function(coach, index) { %>
-					<article class="coach-item">
+					<article class="coach-item" data-index="<%= index %>" data-toggle="modal" data-target="#coachModal">
 						<img class="coach-item-img" src="images/<%= coach.imgPortrait %>" alt="<%= coach.firstname + ' ' + coach.lastname %>">
 						<div class="coach-item-detail">
 							<div class="coach-info">

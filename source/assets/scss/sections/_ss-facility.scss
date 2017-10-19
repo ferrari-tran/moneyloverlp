@@ -3,10 +3,9 @@
 	position: relative;
 	z-index: 0;
 	overflow: hidden;
-	min-height: 100vh;
 	display: flex;
 	align-items: center;
-	@include breakpoint(992, min) {
+	@include breakpoint(1200, min) {
 		height: 800px;
 	}
 	&::before {
@@ -29,6 +28,10 @@
 	list-style: none;
 	padding: 0;
 
+	@include breakpoint(1200, min) {
+		transform: scale(0.8);
+	}
+
 	> li {
 		img {
 			width: 100%;
@@ -46,6 +49,7 @@
 		z-index: 0;
 		width: 100%;
 		height: 600px;
+		transform: scale(0.55);
 		> li {
 			position: absolute;
 			background-color: #cccccc;
@@ -113,5 +117,4 @@
 			}
 		}
 	}
-	
 }

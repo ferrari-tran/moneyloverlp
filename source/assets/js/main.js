@@ -24,8 +24,6 @@ $.fn.andSelf = function() {
  * Benefit carousel
  */
 $(document).ready(function() {
-  // $('.benefit-item-model').imgBg();
-  
 	var config = {
 		loop: true,
 		margin: 0,
@@ -104,7 +102,7 @@ $(document).ready(function() {
 		})
 		.mouseleave(function(e) {
 			if ($(this).find('.form-control').is(':focus')) {
-				console.log(e);
+				// console.log(e);
 			}
 		});
 });
@@ -134,7 +132,7 @@ $(document).ready(function() {
 	  		}
 	  	},
 	  	{
-	  		breakpoint: 576,
+	  		breakpoint: 480,
 	  		settings: {
 	  			slidesToShow: 2,
 	  			slidesToScroll: 2,
@@ -142,16 +140,16 @@ $(document).ready(function() {
 	  	}
 	  ]
 	});
-	
+
 	$('#coachModal').on('hidden.bs.modal', function(e) {
 		$(sliderNav).slick('refresh');
 	});
 
-	$('#coachModal').on('show.bs.modal', function(e) {
+	$('#coachModal').on('shown.bs.modal', function(e) {
 		var button = $(e.relatedTarget),
 				index = $(button).data('index');
 
-		var modalCoach = $('.coach-modal > div')
+		var modalCoach = $('.coach-modal > div');
 
 		$(modalCoach).not('.slick-initialized').slick({
 			slidesToShow: 1,
@@ -166,7 +164,7 @@ $(document).ready(function() {
 
 		setTimeout(function() {
 			$(modalCoach).slick('slickGoTo', index);
-		}, 10);
+		}, 100);
 	});
 });
 
@@ -221,7 +219,6 @@ $('.btn-scroll')
 $(document).ready(function() {
   var alertBox = $('#alert-box');
   $(alertBox).hide();
-  
   var validator = new FormValidator('form-register', [{
     name: 'name',
     display: 'Vui lòng điền đầy đủ họ tên!',
@@ -278,6 +275,7 @@ $(document).ready(function() {
 		        // $(alertBox).removeClass('alert-danger').html('Đăng ký thành công!').addClass('alert-success').show();
 		        $(alertBox).removeClass('alert-danger');
 		        alert('Đăng ký thành công!');
+		        $(inputs).val('');
 		      },
 		      error: function(data) {
 		        alert('Lỗi đăng ký!');
