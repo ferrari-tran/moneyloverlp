@@ -211,7 +211,7 @@
   background: #fff;
   width: 50px;
   height: 50px;
-  font-weight: bold;
+  font-weight: 600;
   box-sizing: border-box;
   border-radius: 50px;
   box-shadow: 0px 0px 0px 5px rgba(255,255,255,0.5);
@@ -234,11 +234,11 @@
     box-shadow: 0px 0px 0px 5px rgba($primary-color,0.5);
     width: 150px;
     &::before {
-      font-size: 18px;
+      font-size: 16px;
       animation: floatingText 0.3s alternate;
       // animation-delay: 0.3s;
       animation-timing-function: ease-in;
-      content: 'Đăng ký ngay';
+      content: 'Đăng ký tập thử';
     }
   }
 }
@@ -248,7 +248,7 @@
     opacity: 0;
   }
   50% {
-    content: 'Đăng ký ngay';
+    content: 'Đăng ký tập thử';
   }
   100% {
     opacity: 1;
