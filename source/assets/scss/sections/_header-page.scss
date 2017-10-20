@@ -15,8 +15,11 @@
     &:nth-child(1) {
       background-image: url('../images/slide-1-bg.min.jpg');
     }
-    &:nth-child(2), &:nth-child(3) {
-      background-image: url('../images/bg-room.min.png');
+    &:nth-child(2) {
+      background-image: url('../images/Slide 1.min.jpg');
+    }
+    &:nth-child(3) {
+      background-image: url('../images/Slide 2.min.jpg');
     }
   }
 }
@@ -56,6 +59,12 @@
 	}
 }
 
+.carousel:hover {
+  .carousel-control {
+    opacity: 1;
+  }
+}
+
 .carousel-control-prev {
   justify-content: flex-start;
 }
@@ -71,6 +80,7 @@
   width: 30px;
   height: 30px;
   transition: all 0.3s ease-in-out;
+  opacity: 0;
 
   > .icon {
     margin-top: 2px;
