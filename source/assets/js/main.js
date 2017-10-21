@@ -108,6 +108,15 @@ $(document).ready(function() {
 });
 
 /**
+ * Testimonial
+ */
+$(document).ready(function() {
+	$('.carousel').carousel({
+		interval: 7000
+	});
+});
+
+/**
  * Coach carousel
  */
 $(document).ready(function() {
