@@ -112,7 +112,7 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
 	$('.carousel').carousel({
-		interval: 7000
+		interval: 10000
 	});
 });
 
